@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+
+  "name": "Remove Element",
+  "description": "Adds a context menu (right-click) tool to remove the clicked HTML element.",
+  "version": "1.0",
+  "author": "Austin Heiman",
+
+  "permissions": [
+    "contextMenus",
+    "activeTab"
+  ],
+
+  "icons": {
+    "16": "images/red-x-16.png",
+    "48": "images/red-x-48.png",
+    "128": "images/red-x-128.png"
+  },
+
+  "background": {
+    "service_worker": "event.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": [
+        "content_script.js"
+      ]
+    }
+  ]
+
+}
