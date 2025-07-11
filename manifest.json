@@ -2,9 +2,9 @@
   "manifest_version": 3,
 
   "name": "Remove Element",
-  "description": "Adds a context menu (right-click) tool to remove the clicked HTML element.",
-  "version": "1.0",
-  "author": "Austin Heiman",
+  "description": "Chrome extension context menu to remove HTML elements, all kinds of tags",
+  "version": "3.0",
+  "author": "GoldFinger",
 
   "permissions": [
     "contextMenus",
