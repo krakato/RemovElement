@@ -20,6 +20,5 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         clickedElement.remove();
       }
     }
-    // Opcional: alert("Elemento y padre borrados");
   }
 });
