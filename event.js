@@ -1,12 +1,21 @@
-// background (event) page
-chrome.runtime.onInstalled.addListener(() => {
-  chrome.contextMenus.create({
-    title: "Remove Element",
-    id: "remove-element",
-    contexts: ["all"]
-  });
-});
+// Content script para eliminar el elemento clickeado Cambiado con Copilot
+let clickedElement = null;
 
-chrome.contextMenus.onClicked.addListener((info, tab) => {
-  chrome.tabs.sendMessage(tab.id, { action: "remove-element" });
+document.addEventListener("mousedown", function(event) {
+  clickedElement = event.target;
+}, true);
+
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+  if (request.action === "remove-element" && clickedElement) {
+    // Elimina el elemento clickeado
+    clickedElement.remove();
+    // Elimina el padre si existe
+    if (clickedElement.parentElement) {
+      //Eliminar el padre preguntando      
+      if (confirm("¿Deseas eliminar también el elemento padre?")) {
+        clickedElement.parentElement.remove();
+      }
+    }
+    // Opcional: alert("Elemento y padre borrados");
+  }
 });

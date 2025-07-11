@@ -2,7 +2,7 @@
   "manifest_version": 3,
 
   "name": "Remove Element",
-  "description": "Chrome extension context menu to remove HTML elements, all kinds of tags",
+  "description": "Chrome extension context menu to remove HTML elements, all kinds of tags.",
   "version": "3.0",
   "author": "GoldFinger",
 
